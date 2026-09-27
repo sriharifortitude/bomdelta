@@ -134,7 +134,13 @@ cargo test    # 51 unit tests (purl identity, version order incl. the semver
 
 CI also runs clippy with warnings as errors, checks formatting, builds on
 the declared minimum Rust version (1.77) as well as stable, and fails if
-the output block above no longer matches what the binary prints.
+the output block above no longer matches what the binary prints. It also
+scans the full commit history with
+[credsweep](https://github.com/sriharifortitude/credsweep). The first run
+reported two lines of the licence parser (`let tokens = tokenize(expr);`)
+as secrets. That was a bug in credsweep, not a secret here, so it was
+fixed there (v0.1.1, with those lines as its regression test) instead of
+being allowlisted here.
 
 ## Licence
 
