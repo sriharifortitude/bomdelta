@@ -1,0 +1,17 @@
+[package]
+name = "bomdelta"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.77"
+description = "Diff two CycloneDX SBOMs and flag what a release reviewer has to look at: downgrades, older duplicate copies, and licences that became more restrictive."
+license = "MIT"
+repository = "https://github.com/sriharifortitude/bomdelta"
+readme = "README.md"
+keywords = ["sbom", "cyclonedx", "supply-chain", "license", "security"]
+categories = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+serde_json = "1"
+
+[profile.release]
+strip = true
